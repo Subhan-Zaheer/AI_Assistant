@@ -53,7 +53,7 @@ if __name__ == '__main__':
     wishMe()
     # while True:
         # query = takeCommand()
-    query = "open youtube"
+    query = "the time"
     if 'wikipedia' in query:
         speak("Searching Wikipedia...")
         query = query.replace("wikipedia", "")
@@ -71,3 +71,13 @@ if __name__ == '__main__':
         print("Opening Google for you...")
         speak("Opening Google for you...")
         webbrowser.open("google.com")
+
+    elif 'open stackoverflow' in query:
+        print("Opening Stack Over Flow for you...")
+        speak("Opening Stack Over Flow for you...")
+        webbrowser.open("stackoverflow.com")
+
+    elif 'the time' in query:
+        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+        print(strTime)
+        speak(f"Sir! The time is {strTime}")
