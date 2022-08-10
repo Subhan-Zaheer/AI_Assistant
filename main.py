@@ -51,33 +51,33 @@ def takeCommand():
 if __name__ == '__main__':
 
     wishMe()
-    # while True:
-        # query = takeCommand()
-    query = "the time"
-    if 'wikipedia' in query:
-        speak("Searching Wikipedia...")
-        query = query.replace("wikipedia", "")
-        results = wikipedia.summary(query, sentences=2)
-        print(results)
-        speak("According to Wikipedia")
-        speak(results)
+    while True:
+        query = takeCommand()
 
-    elif 'open youtube' in query:
-        print("Opening Youtube for you...")
-        speak("Opening Youtube for you...")
-        webbrowser.open("youtube.com")
+        if 'wikipedia' in query:
+            speak("Searching Wikipedia...")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            print(results)
+            speak("According to Wikipedia")
+            speak(results)
 
-    elif 'open google' in query:
-        print("Opening Google for you...")
-        speak("Opening Google for you...")
-        webbrowser.open("google.com")
+        elif 'open youtube' in query:
+            print("Opening Youtube for you...")
+            speak("Opening Youtube for you...")
+            webbrowser.open("youtube.com")
 
-    elif 'open stackoverflow' in query:
-        print("Opening Stack Over Flow for you...")
-        speak("Opening Stack Over Flow for you...")
-        webbrowser.open("stackoverflow.com")
+        elif 'open google' in query:
+            print("Opening Google for you...")
+            speak("Opening Google for you...")
+            webbrowser.open("google.com")
 
-    elif 'the time' in query:
-        strTime = datetime.datetime.now().strftime("%H:%M:%S")
-        print(strTime)
-        speak(f"Sir! The time is {strTime}")
+        elif 'open stackoverflow' in query:
+            print("Opening Stack Over Flow for you...")
+            speak("Opening Stack Over Flow for you...")
+            webbrowser.open("stackoverflow.com")
+
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            print(strTime)
+            speak(f"Sir! The time is {strTime}")
